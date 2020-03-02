@@ -80,15 +80,16 @@
           @if(Auth::check())
         <div class="col-lg-4">
 
-          <ul class="nav justify-content-end">
+          <ul class="nav">
             <li class="nav-item">
-              <button type="button" class="btn btn-outline-dark">Create New Category</button>
+              <a href="{{ route('category.create')}}" type="button" class="btn btn-outline-dark">Create New Category</a>
+              <a href="{{ route('post.create')}}" type="button" class="btn btn-outline-dark">Create New Post</a>
             </li>
           </ul>
 
 
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">Cras justo odio</li>
+            <li class="list-group-item"><a href="{{ route('categories')}}">Category</a></li>
             <li class="list-group-item">Dapibus ac facilisis in</li>
             <li class="list-group-item">Morbi leo risus</li>
             <li class="list-group-item">Porta ac consectetur ac</li>
@@ -99,11 +100,7 @@
         <div class="col-lg-8">
           @if(Auth::check())
 
-          <ul class="nav justify-content-end">
-            <li class="nav-item">
-              <a href="{{ route('post.create')}}" type="button" class="btn btn-outline-dark">Create New Post</a>
-            </li>
-          </ul>
+
           @endif
           @yield('content')
         </div>
