@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Sus') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -24,7 +24,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    Sus
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -72,9 +72,36 @@
             </div>
         </nav>
 
-        <main class="py-4">
-            @yield('content')
-        </main>
+      
     </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-4">
+          <ul class="nav justify-content-end">
+            <li class="nav-item">
+              <button type="button" class="btn btn-outline-dark">Create New Category</button>
+            </li>
+          </ul>
+
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Cras justo odio</li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Morbi leo risus</li>
+            <li class="list-group-item">Porta ac consectetur ac</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+          </ul>
+        </div>
+        <div class="col-lg-8">
+          <ul class="nav justify-content-end">
+            <li class="nav-item">
+              <a href="/post/create" type="button" class="btn btn-outline-dark">Create New Post</a>
+            </li>
+          </ul>
+          @yield('content')
+        </div>
+      </div>
+    </div>
+
 </body>
 </html>
