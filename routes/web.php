@@ -18,8 +18,15 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/post/create',[
-  'uses' => 'Postscontroller@create',
-  'as' => 'post.create'
-]);
-Route::post('/post/store', 'Postscontroller@store');
+//group of admin
+Route::group(['prefix'=>'admin','middleware'=>'auth'], function(){
+
+  Route::get('/post/create',[
+    'uses' => 'Postscontroller@create',
+    'as' => 'post.create'
+  ]);
+  Route::post('/post/store', [
+    'uses' => 'Postscontroller@store',
+    'as' => 'post.store'
+  ]);
+});

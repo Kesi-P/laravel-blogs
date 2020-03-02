@@ -72,17 +72,20 @@
             </div>
         </nav>
 
-      
+
     </div>
 
-    <div class="container-fluid">
-      <div class="row">
+    <div class="container">
+      <div class="row justify-content-md-center">
+          @if(Auth::check())
         <div class="col-lg-4">
+
           <ul class="nav justify-content-end">
             <li class="nav-item">
               <button type="button" class="btn btn-outline-dark">Create New Category</button>
             </li>
           </ul>
+
 
           <ul class="list-group list-group-flush">
             <li class="list-group-item">Cras justo odio</li>
@@ -92,12 +95,16 @@
             <li class="list-group-item">Vestibulum at eros</li>
           </ul>
         </div>
+          @endif
         <div class="col-lg-8">
+          @if(Auth::check())
+
           <ul class="nav justify-content-end">
             <li class="nav-item">
-              <a href="/post/create" type="button" class="btn btn-outline-dark">Create New Post</a>
+              <a href="{{ route('post.create')}}" type="button" class="btn btn-outline-dark">Create New Post</a>
             </li>
           </ul>
+          @endif
           @yield('content')
         </div>
       </div>

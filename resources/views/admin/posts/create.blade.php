@@ -7,7 +7,7 @@
 
     </div>
     <div class="panel-body">
-      <form action="/post/store" method="post">
+      <form action="{{ route('post.store')}}" method="post">
         <!-- check that the form comw from only this form -->
         {{ csrf_field()}}
 
