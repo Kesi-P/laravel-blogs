@@ -11,10 +11,10 @@
       @foreach ($categories as $category)
       <tr>
         <td> {{ $category->name}}</td>
-        <td>  <a href="#" type="button" class="btn btn-success">Editting</a></td>
-        <td><a href="#" type="button" class="btn btn-warning">Deleting</a></td>
+        <td>  <a href="{{route('category.edit', ['id'=>$category->id] )}}" type="button" class="btn btn-success"><span class="glyphicon glyphicon-pencil"></span>Editting</a></td>
+        <td><a href="{{route('category.delete', ['id'=>$category->id] )}}" type="button" class="btn btn-warning"><span class="glyphicon glyphicon-trash"></span>Deleting</a></td>
       </tr>
-      
+
       @endforeach
     </tbody>
   </table>

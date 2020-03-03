@@ -98,10 +98,6 @@
         </div>
           @endif
         <div class="col-lg-8">
-          @if(Auth::check())
-
-
-          @endif
           @yield('content')
         </div>
       </div>
