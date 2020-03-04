@@ -12,6 +12,11 @@ class Post extends Model
    protected $fillable = [
      'title','content','category_id','featured','slug'
    ];
+
+   public function getFeaturedAttribute($featured)
+   {
+     return asset($featured);
+   }
    //new date
    protected $date = ['deleted_at'];
 

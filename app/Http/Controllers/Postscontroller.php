@@ -16,7 +16,8 @@ class Postscontroller extends Controller
      */
     public function index()
     {
-        //
+        $posts = Post::all();
+        return view('admin.posts.index')->with('posts', $posts);
     }
 
     /**
@@ -64,7 +65,7 @@ class Postscontroller extends Controller
         ]);
 
         Session::flash('success', 'Created new Post');
-        
+
     }
 
     /**
