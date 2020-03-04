@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Category;
 use App\Post;
 use Session;
+use Illuminate\Support\Str;
 class Postscontroller extends Controller
 {
     /**
@@ -58,10 +59,12 @@ class Postscontroller extends Controller
           'title' =>$request->title,
           'content' =>$request->content,
           'featured' => 'uploads/posts/' . $featured_new_name,
-          'category_id' =>$request->category_id
+          'category_id' =>$request->category_id,
+          'slug' => Str::slug($request->title),
         ]);
 
         Session::flash('success', 'Created new Post');
+        
     }
 
     /**
