@@ -14,7 +14,7 @@
         <td><img src="{{ $post->featured}}" alt="{{ $post->title}}" width="50px" height="50px"></td>
         <td> {{ $post->title}}</td>
         <td>  <a href="{{route('post.edit', ['id'=>$post->id] )}}" type="button" class="btn btn-success"><span class="glyphicon glyphicon-pencil"></span>Editting</a></td>
-        <td><a href="{{route('post.delete', ['id'=>$post->id] )}}" type="button" class="btn btn-warning"><span class="glyphicon glyphicon-trash"></span>Deleting</a></td>
+        <td><a href="{{route('post.delete', ['id'=>$post->id] )}}" type="button" class="btn btn-warning"><span class="glyphicon glyphicon-trash"></span>Trash</a></td>
       </tr>
 
       @endforeach
