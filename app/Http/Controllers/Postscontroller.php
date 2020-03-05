@@ -65,7 +65,7 @@ class Postscontroller extends Controller
         ]);
 
         Session::flash('success', 'Created new Post');
-
+        return redirect()->back();
     }
 
     /**
@@ -115,5 +115,26 @@ class Postscontroller extends Controller
 
         Session::flash('success','The post was just trashed');
         return redirect()->back();
+    }
+
+    public function trash()
+    {
+      $post = Post::onlyTrashed()->get();
+      return view('admin.posts.trash')->with('trashes' , $post);
+      //dd($post);
+    }
+
+    public function restore($id)
+    {
+      $trash = Post::withTrashed()->where('id',$id)->get()->first();
+      $trash->restore();
+      return redirect()->back();
+    }
+
+    public function delete($id)
+    {
+      $kill = Post::withTrashed()->where('id',$id)->first();
+      $kill->forceDelete();
+      return redirect()->back();
     }
 }

@@ -90,6 +90,7 @@
           <ul class="list-group list-group-flush">
             <li class="list-group-item"><a href="{{ route('categories')}}">Category</a></li>
             <li class="list-group-item"><a href="{{ route('posts')}}">Post</a></li>
+            <li class="list-group-item"><a href="{{ route('post.trashed')}}">Trashed Post</a></li>
             <li class="list-group-item">Morbi leo risus</li>
             <li class="list-group-item">Porta ac consectetur ac</li>
             <li class="list-group-item">Vestibulum at eros</li>

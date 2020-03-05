@@ -78,4 +78,19 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'], function(){
     'uses' =>'Postscontroller@destroy',
     'as'=> 'post.delete'
   ]);
+
+  Route::get('/post/trashed',[
+    'uses' =>'Postscontroller@trash',
+    'as'=> 'post.trashed'
+  ]);
+
+  Route::get('/post/restore/{id}',[
+    'uses' =>'Postscontroller@restore',
+    'as'=> 'post.restore'
+  ]);
+
+  Route::get('/post/kill/{id}',[
+    'uses' =>'Postscontroller@delete',
+    'as'=> 'post.kill'
+  ]);
 });
