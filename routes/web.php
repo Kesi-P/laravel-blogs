@@ -93,4 +93,9 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'], function(){
     'uses' =>'Postscontroller@delete',
     'as'=> 'post.kill'
   ]);
+
+  Route::post('/post/update/{id}',[
+    'uses' =>'Postscontroller@update',
+    'as'=> 'post.update'
+  ]);
 });
