@@ -132,7 +132,8 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'], function(){
 
 
   Route::get('/test', function(){
-    return App\Category::all();
+    //return App\Category::all();
+    return App\User::find(1)->profile;
     //return App\Category::find(2)->post;
     //or
     //return App\Post::find(2)->category;
