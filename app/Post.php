@@ -22,7 +22,7 @@ class Post extends Model
 
    public function category()
    {
-     return $this->beongsTo('App\Category');
+     return $this->belongsTo('App\Category');
    }
    //tags->tags be a sigular
    //posts->post p before t

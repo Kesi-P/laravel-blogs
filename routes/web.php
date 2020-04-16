@@ -129,4 +129,12 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'], function(){
     'uses' => 'TagsController@store',
     'as' => 'tag.store'
   ]);
+
+
+  Route::get('/test', function(){
+    return App\Category::all();
+    //return App\Category::find(2)->post;
+    //or
+    //return App\Post::find(2)->category;
+  });
 });
