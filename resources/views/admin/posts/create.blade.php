@@ -36,6 +36,16 @@
             @endforeach
           </select>
         </div>
+        <div class="form-group">
+          <label for="tag">Select Tags</label>
+          @foreach ($tags as $tag)
+          <div class="checkbox">
+            <!-- to recieve more than one tag need to send as an array -->
+            <label><input type="checkbox" name="tags[]" value="{{ $tag->id}}">{{$tag->tag}}</label>
+          </div>
+          @endforeach
+
+        </div>
          <div class="form-group">
           <label for="content">Content</label>
           <textarea class="form-control" id="content" rows="3" name="content"></textarea>
