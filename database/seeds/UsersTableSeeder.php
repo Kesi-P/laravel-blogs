@@ -20,11 +20,12 @@ class UsersTableSeeder extends Seeder
 
 
         App\Profile::create([
-          'user_id'=> $user->id,
+
           'avatar' => 'link to img',
+          'user_id'=> $user->id,
           'about' => 'Boring one',
           'facebook'=> 'facebook.com',
-          'youtube' => 'youtube.com'
+          'instragram' => 'instragram.com'
         ]);
     }
 }
