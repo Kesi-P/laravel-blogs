@@ -13,7 +13,13 @@
       <tr>
         <td><img src="{{ asset($user->profile->avatar) }}" alt="" width="50px" height="50px"></td>
         <td> {{ $user->name}}</td>
-        <td> Permis</td>
+        <td>
+          @if($user->admin)
+            <a href="{{ route('user.sub', $user->id)}}" class="btn btn-xs btn-success">Admin</a>
+          @else
+            <a href="{{ route('user.admin', $user->id)}}" class="btn btn-xs btn-primary">Subscribe</a>
+          @endif
+        </td>
 
         <td><span class="glyphicon glyphicon-trash"></span>Trash</td>
       </tr>

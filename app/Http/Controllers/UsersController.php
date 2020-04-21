@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Session;
 use App\User;
 use App\Profile;
 class UsersController extends Controller
@@ -49,7 +50,7 @@ class UsersController extends Controller
       $profile = Profile::create([
         'user_id'=> $user->id
       ]);
-      
+
 
       return redirect()->back();
     }
@@ -97,5 +98,27 @@ class UsersController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function be_admin($id)
+    {
+      $user = User::find($id);
+
+      $user->admin =1;
+      $user->save();
+
+      Session::flash('success', 'Change to be an Admin');
+      return redirect()->back();
+    }
+
+    public function not_admin($id)
+    {
+      $user = User::find($id);
+
+      $user->admin =0;
+      $user->save();
+
+      Session::flash('success', 'Change to be a Subscribe');
+      return redirect()->back();
     }
 }
