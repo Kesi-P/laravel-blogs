@@ -84,7 +84,9 @@
               <a href="{{ route('category.create')}}" type="button" class="btn btn-outline-dark">Create New Category</a>
               <a href="{{ route('post.create')}}" type="button" class="btn btn-outline-dark">Create New Post</a>
               <a href="{{ route('tag.create')}}" type="button" class="btn btn-outline-dark">Create New Tag</a>
+              @if(Auth::user()->admin)
               <a href="{{ route('user.create')}}" type="button" class="btn btn-outline-dark">Create New User</a>
+              @endif
             </li>
           </ul>
 

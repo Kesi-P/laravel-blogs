@@ -8,6 +8,10 @@ use App\User;
 use App\Profile;
 class UsersController extends Controller
 {
+    public function __construct()
+    {
+      $this->middleware('admin'); //subscriber can do nothing which belongs to these function
+    }
     /**
      * Display a listing of the resource.
      *
