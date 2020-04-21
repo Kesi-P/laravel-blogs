@@ -84,6 +84,7 @@
               <a href="{{ route('category.create')}}" type="button" class="btn btn-outline-dark">Create New Category</a>
               <a href="{{ route('post.create')}}" type="button" class="btn btn-outline-dark">Create New Post</a>
               <a href="{{ route('tag.create')}}" type="button" class="btn btn-outline-dark">Create New Tag</a>
+              <a href="{{ route('user.create')}}" type="button" class="btn btn-outline-dark">Create New User</a>
             </li>
           </ul>
 
@@ -92,6 +93,7 @@
             <li class="list-group-item"><a href="{{ route('categories')}}">Category</a></li>
             <li class="list-group-item"><a href="{{ route('posts')}}">Post</a></li>
             <li class="list-group-item"><a href="{{ route('tags')}}">Tag</a></li>
+            <li class="list-group-item"><a href="{{ route('users')}}">User</a></li>
             <li class="list-group-item"><a href="{{ route('post.trashed')}}">Trashed Post</a></li>
 
           </ul>
