@@ -164,7 +164,10 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'], function(){
     'uses' => 'UsersController@not_admin',
     'as' => 'user.sub'
   ]);
-
+  Route::get('user/delete/{id}', [
+    'uses' => 'UsersController@destroy',
+    'as'=> 'user.destroy'
+  ]);
   Route::get('user/profile', [
     'uses' => 'ProfilesController@index',
     'as'=> 'user.profile'
@@ -174,4 +177,7 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'], function(){
     'uses' => 'ProfilesController@update',
     'as'=> 'user.profile.update'
   ]);
+
+
+
 });

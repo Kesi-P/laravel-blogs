@@ -21,7 +21,11 @@
           @endif
         </td>
 
-        <td><span class="glyphicon glyphicon-trash"></span>Trash</td>
+        <td>
+          @if(Auth::id() !== $user->id)
+          <a href="{{ route('user.destroy',$user->id)}}" class="btn btn-xs btn-danger"><span class="glyphicon glyphicon-trash"> </span>Delete</a>
+          @endif
+        </td>
       </tr>
 
       @endforeach

@@ -84,7 +84,7 @@ class ProfilesController extends Controller
           $avatar_new_name = time().$avatar->getClientOriginalName();
           $avatar->move('upload/avatars',$avatar_new_name);
 
-          $user->profile->avatar = 'uploads/avatars/'.$avatar_new_name;
+          $user->profile->avatar = 'upload/avatars/'.$avatar_new_name;
 
           //$user->profile->save();
         }
@@ -101,7 +101,7 @@ class ProfilesController extends Controller
         $user->profile->save();
 
         Session::flash('success','Profile updated');
-        return redirect()->route('users');
+        return redirect()->back();
     }
 
     /**

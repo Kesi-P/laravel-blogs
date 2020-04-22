@@ -29,7 +29,8 @@ class Postscontroller extends Controller
     public function create()
     {
         $categories = Category::all();
-        if($categories->count() == 0)
+        $tags = Tag::all();
+        if($categories->count() == 0 || $tags->count() == 0)
         {
           Session::flash('info','Need to create a Category first');
           return redirect()->back();
