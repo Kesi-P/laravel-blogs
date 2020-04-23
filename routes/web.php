@@ -178,6 +178,14 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'], function(){
     'as'=> 'user.profile.update'
   ]);
 
-
+  Route::get('/settings',[
+    'uses' => 'SettingController@index',
+    'as' => 'settings'
+  ])->middleware('admin');
+//OR CAN PUT CONSTRUCT FOR ADMIN IN SettingController
+  Route::post('/settings/update',[
+    'uses' => 'SettingController@update',
+    'as' => 'settings.update'
+  ])->middleware('admin');
 
 });
