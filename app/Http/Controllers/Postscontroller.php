@@ -32,7 +32,7 @@ class Postscontroller extends Controller
         $tags = Tag::all();
         if($categories->count() == 0 || $tags->count() == 0)
         {
-          Session::flash('info','Need to create a Category first');
+          Session::flash('info','Need to create a Category and Tag first');
           return redirect()->back();
         }
         return view('admin.posts.create')->with('categories', Category::all())->with('tags',Tag::all()) ;
