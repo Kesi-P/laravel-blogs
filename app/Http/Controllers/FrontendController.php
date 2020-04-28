@@ -15,6 +15,9 @@ class FrontendController extends Controller
               ->with('title' , Setting::first()->site_name)
               //show just 4
               ->with('categories' , Category::take(4)->get())
-              ->with('first_post' , Post::orderBy('created_at' ,'desc')->first());
+              ->with('first_post' , Post::orderBy('created_at' ,'desc')->first())
+              ->with('frontend', Category::find(1))
+              ->with('backend', Category::find(2))
+              ->with('settingfooter', Setting::first());
     }
 }
