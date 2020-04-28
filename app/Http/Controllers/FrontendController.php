@@ -20,4 +20,13 @@ class FrontendController extends Controller
               ->with('backend', Category::find(2))
               ->with('settingfooter', Setting::first());
     }
+
+    public function singlePost($slug)
+    {
+      $post = Post::where('slug', $slug)->first();
+      return view('includes.single')->with('post',$post)
+                                    ->with('title' , Setting::first()->site_name)
+                                    ->with('categories',Category::take(5)->get())
+                                    ->with('settingfooter', Setting::first());;
+    }
 }
