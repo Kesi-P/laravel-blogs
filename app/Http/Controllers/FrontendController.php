@@ -19,7 +19,8 @@ class FrontendController extends Controller
               ->with('first_post' , Post::orderBy('created_at' ,'desc')->first())
               ->with('frontend', Category::find(1))
               ->with('backend', Category::find(2))
-              ->with('settingfooter', Setting::first());
+              ->with('settingfooter', Setting::first())
+              ->with('tags' , Tag::all());
     }
 
     public function singlePost($slug)
@@ -41,9 +42,19 @@ class FrontendController extends Controller
       $category = Category::find($id);
 
       return view('category')->with('category', $category)
-                                      ->with('title' , $category->name)
+                                      ->with('title' , Setting::first()->site_name)
                                       ->with('settingfooter' , Setting::first())
                                       ->with('categories',Category::take(5)->get())
                                       ->with('tags' , Tag::all());
+    }
+
+    public function tag($id)
+    {
+      $tags = Tag::find($id);
+      //dd($id);
+      return view('tag')->with('tag', $tags)
+                        ->with('title' , Setting::first()->site_name)
+                        ->with('settingfooter' , Setting::first())
+                        ->with('categories',Category::all());
     }
 }

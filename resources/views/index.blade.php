@@ -272,6 +272,45 @@
         </div>
     </div>
 
+    <div class="container-fluid">
+        <div class="row medium-padding120 bg-border-color">
+            <div class="container">
+                <div class="col-lg-12">
+                <div class="offers">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                          <!-- Sidebar-->
+
+                          <div class="col-lg-12">
+                              <aside aria-label="sidebar" class="sidebar sidebar-center">
+                                  <div  class="widget w-tags">
+                                      <div class="heading text-center">
+                                          <h4 class="heading-title">ALL BLOG TAGS</h4>
+                                          <div class="heading-line">
+                                              <span class="short-line"></span>
+                                              <span class="long-line"></span>
+                                          </div>
+                                      </div>
+
+                                      <div class="tags-wrap">
+                                        @foreach($tags as $tag)
+                                          <a href="{{ route('tag.single', ['id'=> $tag->id])}}" class="w-tags-item">{{ $tag->tag }}</a>
+                                        @endforeach
+                                      </div>
+                                  </div>
+                              </aside>
+                          </div>
+
+                          <!-- End Sidebar-->
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
 <!-- Subscribe Form -->
 
 <div class="container-fluid bg-green-color">

@@ -24,6 +24,11 @@ Route::get('/category/{id}',[
   'uses' =>'FrontendController@category',
   'as' => 'category.single'
 ]);
+
+Route::get('/tag/{id}',[
+  'uses' =>'FrontendController@tag',
+  'as' => 'tag.single'
+]);
 Auth::routes();
 
 //group of admin need to past the admin in the route url
