@@ -85,7 +85,7 @@
 
                                         <span class="category">
                                             <i class="seoicon-tags"></i>
-                                            <a href="#">{{$first_post->category->name}}</a>
+                                            <a href="{{ route('category.single', ['id' => $first_post->Category->id])}}">{{$first_post->category->name}}</a>
                                         </span>
 
                                         <span class="post__comments">

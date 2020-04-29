@@ -15,10 +15,18 @@ Route::get('/',[
   'uses' =>'FrontendController@index',
   'as' => 'index'
 ]);
+Route::get('/post/{slug}',[
+  'uses' => 'FrontendController@singlePost',
+  'as' => 'post.single'
+]);
 
+Route::get('/category/{id}',[
+  'uses' =>'FrontendController@category',
+  'as' => 'category.single'
+]);
 Auth::routes();
 
-//group of admin
+//group of admin need to past the admin in the route url
 Route::group(['prefix'=>'admin','middleware'=>'auth'], function(){
 
   Route::get('/home',[
@@ -189,8 +197,5 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'], function(){
     'as' => 'settings.update'
   ])->middleware('admin');
 
-  Route::get('/{slug}',[
-    'uses' => 'FrontendController@singlePost',
-    'as' => 'post.single'
-  ]);
+
 });
