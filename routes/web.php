@@ -39,6 +39,13 @@ Route::get('/results', function(){
                         ->with('settingfooter' , \App\Setting::first())
                         ->with('tags' , \App\Tag::all());
 });
+
+Route::post('/subscribe', function(){
+  $email = request('email');
+  Newsletter::subscribe($email);
+
+  return redirect()->back();
+});
 Auth::routes();
 
 //group of admin need to past the admin in the route url
