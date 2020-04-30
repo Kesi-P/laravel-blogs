@@ -29,6 +29,16 @@ Route::get('/tag/{id}',[
   'uses' =>'FrontendController@tag',
   'as' => 'tag.single'
 ]);
+
+//function without controller
+Route::get('/results', function(){
+  $posts = \App\Post::where('title','like', '%'.request('query').'%')->get();
+  return view('results')->with('posts',$posts)
+                        ->with('title' , \App\Setting::first()->site_name)
+                        ->with('search' , 'Search results:'.request('query'))
+                        ->with('settingfooter' , \App\Setting::first())
+                        ->with('tags' , \App\Tag::all());
+});
 Auth::routes();
 
 //group of admin need to past the admin in the route url
